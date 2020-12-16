@@ -1,0 +1,45 @@
+<ion-content>
+  <div style="padding-top: 20%;"></div>
+  <ion-text class="judul biru">Register</ion-text>
+  <div style="padding-top: 20%;"></div>
+  <ion-content>
+    <form [formGroup]="formSignUp" (ngSubmit)="submitForm()" style="padding-right: 15%; padding-left: 10%">
+      <ion-grid>
+        <ion-item>
+          <ion-label class="biru" position="floating">First Name</ion-label>
+          <ion-input type="text" formControlName="firstName"></ion-input>
+          <ion-icon name="person" color="primary" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label class="biru" position="floating">Last Name</ion-label>
+          <ion-input type="text" formControlName="lastName"></ion-input>
+          <ion-icon name="person" color="primary" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label class="biru" position="floating">Email</ion-label>
+          <ion-input type="email" email formControlName="email" ></ion-input>
+          <ion-icon name="mail-outline"color="primary" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label class="biru" position="floating">Password</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+          <ion-icon name="lock-closed-outline" color="primary" slot="end"></ion-icon>
+        </ion-item>
+      </ion-grid>
+      <ion-button type="submit" class="tengah" color="primary" style="padding-left: 35%; margin-top: 10%;" [disabled]="!formSignUp.valid">
+        <ion-text color="light">
+          Register
+        </ion-text>
+      </ion-button> 
+    </form>
+
+    <!-- Buat balik ke login -->
+    <div class="subtitle-regist ion-text-center ion-margin-top">
+      Sudah punya akun ?
+      <ion-text style="color: black" routerLink="/">
+        <a>Log In</a>
+      </ion-text>
+    </div>
+  </ion-content>
+</ion-content>
+

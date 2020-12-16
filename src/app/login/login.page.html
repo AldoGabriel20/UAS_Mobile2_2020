@@ -1,0 +1,34 @@
+<ion-content>
+  <div style="padding-top: 20%;"></div>
+  <ion-text class="judul biru">Login</ion-text>
+  <div style="padding-top: 20%;"></div>
+
+  <form [formGroup]="formSignIn" (ngSubmit)="submitForm()" style="padding-right: 15%; padding-left: 10%">
+    <ion-grid>
+      <ion-item>
+        <ion-label class="biru" position="floating">Email</ion-label>
+        <ion-input type="email" email formControlName="email" ></ion-input>
+        <ion-icon name="person"color="primary" slot="end"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-label class="biru" position="floating">Kata Sandi</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+        <ion-icon name="lock-closed" color="primary" slot="end"></ion-icon>
+      </ion-item>
+    </ion-grid>
+    <ion-row>
+      <ion-button type="submit" shape="round">
+        <ion-label>Masuk</ion-label>
+      </ion-button>
+    </ion-row>
+  </form>
+
+  <!-- Buat pindah ke page register -->
+  <div class="subtitle-regist">
+    Don't have account? 
+    <ion-text style="color: black" routerLink="/register">
+      <a>Register here!</a>
+    </ion-text>
+  </div>
+</ion-content>
+
