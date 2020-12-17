@@ -1,0 +1,87 @@
+ion-avatar{
+    margin: 1rem auto;
+    width: 10rem;
+    height: 10rem;
+    background-color: white;
+}
+
+.testt{
+    position: absolute;
+    height: 5rem;
+    width: 100%;
+    z-index: -1;
+    background-color: #5A5AAD;
+}
+ion-icon{
+    color: black;
+}
+ion-title{
+    color:black;
+}
+
+ion-img{
+    width: 3rem;
+    height: 3rem;
+    margin: auto;
+}
+
+.profile{
+    margin: 1rem 5rem 1rem 5rem;
+}
+
+.label-btn{
+    font-weight: 550;
+    text-transform: capitalize;
+}
+.icon-btn{
+    color:black;
+}
+ion-button {
+    --background:#C4C4C4;
+    --border-color:#C4C4C4;
+    color: black
+}
+
+.title{
+    text-align: center;
+}
+.subtitle{
+    text-align: center;
+    margin: auto;
+}
+.btn-section ion-grid ion-row ion-button{
+    margin: 0.25rem auto 1rem;
+}
+
+.edit{
+    position: absolute;
+    padding-left: 120px;
+    top:8.2rem;
+}
+.edit ion-icon{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color:white;
+    border-radius: 20px;
+    padding: 5px;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .profile{
+        margin: 1rem 1rem 1rem 1rem;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

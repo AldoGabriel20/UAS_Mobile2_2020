@@ -1,9 +1,63 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>profile</ion-title>
+  <ion-toolbar color="dark">
+    <ion-title style="color: white;">Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-avatar (click)="presentPopover($event)">
+    <img [src]="imageUrl"/>
+      <div> 
+        <span class="edit"><ion-icon name="camera"></ion-icon></span>
+      </div>
+  </ion-avatar>
 
+  <div class="profile">
+      <ion-item lines="undefined">
+        <ion-icon slot="start" name="person"></ion-icon>
+        <ion-label>
+          <h2>{{user.firstName}}&nbsp;{{user.lastName}}</h2>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="mail"></ion-icon>
+        <ion-label>
+          <h2>{{user.email}}</h2>
+        </ion-label>
+      </ion-item>
+  </div>
+  <br><br>
+
+  <div class="btn-section">
+    <ion-grid>
+      <ion-row>
+        <ion-button (click)="logout()" shape="box">
+          <ion-icon class="icon-btn" slot="start" name="log-out"></ion-icon>
+          <ion-label class="label-btn">Log Out</ion-label>
+        </ion-button>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngIf="userCheckins.length == 0">
+          <ion-label>No check in found.</ion-label>
+        </ion-item>
+        <ion-item *ngFor="let userCheckin of userCheckins.reverse(); let i = index">
+          <ion-label class="ion-text-wrap">{{username}} {{userCheckin[0]}}<br>
+            <small>{{userCheckin[1] | date :'short'}}</small>
+          </ion-label>
+          <ion-button color="danger" slot="end" (click)="removeCheckin(userCheckins.length - i - 1)">
+            <ion-icon name="close"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="ion-text-center ion-margin-bottom">
+    <p class="ion-padding">Aldo Gabriel Yoseph Stephanno<br>00000020534<br><br>Setiap kelas gak mandi!!! Thanks ko Yehez dan ko James untuk arahan dan nasehatnya selama jadi aslabku!!</p>
+  </ion-card>
 </ion-content>

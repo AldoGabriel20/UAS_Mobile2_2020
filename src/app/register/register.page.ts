@@ -40,8 +40,8 @@ export class RegisterPage implements OnInit {
 
   async presentLoading() {
     const loading = await this.loadingController.create({
-      message: 'Akun sedang diproses...',
-      duration: 2000
+      message: 'Account is being processed...',
+      duration: 1000
     });
     await loading.present();
 
@@ -63,7 +63,7 @@ export class RegisterPage implements OnInit {
         .then((resp) => {
           resp.user.sendEmailVerification()
               .then(() => {
-                this.auth.setMessage('Email verifikasi telah dikirim');
+                this.auth.setMessage('Verification email has been sent!');
                 // data user ke db //
                 const userData = {
                   firstName: this.formSignUp.value.firstName,
@@ -81,7 +81,7 @@ export class RegisterPage implements OnInit {
                 this.formSignUp.reset();
                 this.presentLoading().then(() => {
                   this.router.navigate(['./login']);
-                  this.toastSentEmail('Email verifikasi telah dikirim, silahkan check email anda.');
+                  this.toastSentEmail('Verification email has been sent, please check your email');
                 });
               })
               .catch(err => {

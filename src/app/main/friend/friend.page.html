@@ -1,9 +1,37 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>friend</ion-title>
+  <ion-toolbar color="dark">
+    <ion-title style="color: white;">Friend</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="ion-padding">
 
+    <ion-card class="ion-margin-bottom">
+      <div style="margin-top: 16px; color: teal;">
+        <ion-item style="margin-top: -16px">
+          <ion-label position="floating">Add friend by email</ion-label>
+          <ion-input [(ngModel)]="email"></ion-input>
+          <ion-button color="warning" class="ion-margin-top" slot="end" (click)="addFriend()">
+            <ion-icon name="add"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </div>
+    </ion-card>
+
+    <ion-label class="ion-padding">Friends</ion-label>
+    <ion-card class="ion-margin-bottom">
+      <ion-list>
+        <ng-container *ngFor="let userFriend of userFriends;">
+          <ion-item *ngIf="userFriend['firstName'].includes(search)">
+            <ion-icon name="person" slot="start"></ion-icon>
+            <ion-label>{{userFriend['firstName']}}</ion-label>
+            <ion-button color="danger" slot="end" (click)="removeFriend(userFriend['email'])">
+              <ion-icon name="close"></ion-icon>
+            </ion-button>
+          </ion-item>
+        </ng-container>
+      </ion-list>
+    </ion-card>
+  </div>
 </ion-content>

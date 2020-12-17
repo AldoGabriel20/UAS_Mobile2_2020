@@ -50,7 +50,7 @@ export class AuthService {
   logOut(){
     this.angularFire.signOut()
         .then(() => {
-            console.log('user berhasil logout');
+            console.log('Logout Successfull');
         }).catch((err) => {
         console.log(err);
     });

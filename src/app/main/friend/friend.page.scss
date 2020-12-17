@@ -1,0 +1,55 @@
+ion-icon{
+    color: #7296C8;
+}
+  
+ion-title{
+    color:black;
+}
+  
+ion-button{
+    --background: var(--default, --primary);
+}
+  
+ion-img{
+    width: 3rem;
+    height: 3rem;
+    margin: auto;
+}
+  
+.profile{
+    margin: 1rem 5rem 1rem 5rem;
+}
+  
+.label-btn{
+    font-weight: 550;
+}
+  
+.icon-btn{
+    color:white;
+}
+  
+.title{
+    text-align: center;
+}
+  
+.subtitle{
+    text-align: center;
+    margin: auto;
+}
+  
+.btn-section ion-grid ion-row ion-button{
+    margin: 0.25rem auto 1rem;
+}
+
+.create {
+    color: white;
+    --background: #3E3E3E;
+    --background-activated: black;
+    position: absolute;
+    right: 20px;
+    margin-top: 30px;
+}
+
+.ion-margin-bottom {
+    --background-color: darkgray;
+}

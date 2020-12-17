@@ -1,5 +1,7 @@
 {
   "name": "UAS_AldoGabrielYS_20534",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

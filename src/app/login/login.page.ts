@@ -41,22 +41,22 @@ export class LoginPage implements OnInit {
 
   submitForm(){
     if (this.formSignIn.value.email == null || this.formSignIn.value.password == null){
-      this.toastLogin('Email and / or password must not be null.');
+      this.toastLogin('Email or password cannot be null');
     }else{
       this.auth.signInWithEmail(this.formSignIn.value.email, this.formSignIn.value.password )
           .then(result => {
             if (result.user.emailVerified){
-              console.log('email is verified');
+              console.log('Email is verified');
               // set user session data //
               console.log(result.user.uid);
               this.auth.setUserSession(result.user.uid);
               this.router.navigate(['./main']);
             }else{
-              this.toastLogin('Email belum terverifikasi');
+              this.toastLogin('Email has not been verified');
             }
           })
           .catch(error => {
-            this.toastLogin('Invalid user credentials, please try again.');
+            this.toastLogin('Invalid user credentials, please try again');
           });
     }
 
